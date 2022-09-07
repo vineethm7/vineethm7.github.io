@@ -1,0 +1,207 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-primary: 'Lora', serif;
+    --ff-secondary: 'Roboto Slab', serif;
+    --clr-accent: #f8333c;
+    --clr-dark: #303030;
+    --clr-light: #fff;
+    --clr-grey: #eeeeee;
+    --fw-reg: 400;
+    --fw-bold: 700;
+    --fs-body: 2rem;
+    --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    color: var(--title-color);
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-size: xx-large;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+section {
+    padding: 5rem 2rem;
+}
+
+/*Styling HOME Page*/
+header {
+    margin: 0;
+    padding: 0;
+    background-color:cornsilk;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar a {
+    font-family: var(--ff-primary);
+    font-size: 2rem;
+    font-weight: 200;
+    color: var(--clr-dark);
+    text-decoration: none;
+    display: block;
+    padding: 25px 20px;
+    transition: all 0.3s ease 0s;
+    text-align: center;
+}
+
+
+.navbar a:hover {
+    color: orangered;
+}
+
+.home__container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Styling VISUALIZATION Page*/
+.data-viz {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-areas: 'img' 'text';
+}
+
+.data-viz__img {
+    grid-area: img;
+    position: center;
+    display: flex;
+    text-align:center;
+}
+
+.data-viz__text-desc {
+    grid-area: text;
+}
+
+
+
+/*Styling REFERENCES Page*/
+.reference-list a:hover {
+    color: var(--clr-accent);
+}
+
+/*Styling SVG Page*/
+.svg__text{
+    text-align: center;
+}
+
+.svg__shapes {
+    border: 5px solid #eee;
+    width: 50rem;
+    height: 75rem;
+    display: block;
+    margin: 1rem auto;
+    background-color: var(--clr-grey);
+}
+
+.triangle {
+    animation: triangle 3s linear infinite;
+}
+
+.triangle-reverse {
+    animation: triangle_reverse 3s linear infinite;
+}
+
+@keyframes triangle {
+    from {
+        transform: translate(250px, 150px) rotate(0deg);
+    }
+    to {
+        transform: translate(250px, 150px) rotate(360deg);
+    }
+}
+
+@keyframes triangle_reverse {
+    from {
+        transform: translate(250px, 150px) rotate(360deg);
+    }
+    to {
+        transform: translate(250px, 150px) rotate(0deg);
+    }
+}
+
+.square {
+    animation: square 3s linear infinite;
+}
+
+.square-reverse {
+    animation: square_reverse 3s linear infinite;
+}
+
+@keyframes square {
+    from {
+        transform: translate(250px, 500px) rotate(360deg);
+    }
+    to {
+        transform: translate(250px, 500px) rotate(0deg);
+    }
+}
+
+@keyframes square_reverse {
+    from {
+        transform: translate(250px, 500px) rotate(0deg);
+    }
+    to {
+        transform: translate(250px, 500px) rotate(360deg);
+    }
+}
+
+.circle {
+    animation: circle 2s linear infinite;
+}
+
+.circle-reverse {
+    animation: circle-reverse 2s linear infinite;
+}
+
+@keyframes circle {
+    from {
+        transform: translate(150px, 950px);
+    }
+    to {
+        transform: translate(550px, 950px);
+    }
+}
+
+@keyframes circle-reverse {
+    from {
+        transform: translate(550px, 950px);
+    }
+    to {
+        transform: translate(150px, 950px);
+    }
+}

@@ -1,0 +1,20 @@
+<section class="svg__text">
+    <code>Click on the shapes to change the direction of the spin</code>
+    <svg class="svg__shapes" viewBox="0 0 500 1000" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <polygon id="triangle" x="-100" y="-100" points="0 0, 200 200, 0 200" fill = "green" stroke-width="4" stroke="black" class="triangle"></polygon>
+        <rect id="square" x="-100" y="-100" width="200" height="200" fill="blue" stroke-width="4" stroke="black" class="square"></rect>
+        <circle id="circle" cx="-100" cy="-100" r="125" fill="red" stroke-width="4" stroke="black" class="circle"/>
+    </svg>
+</section>
+
+<script>
+    $("#triangle").on("click", function() {
+        $("#triangle").toggleClass("triangle triangle-reverse");
+    })
+    $("#square").on("click", function() {
+        $("#square").toggleClass("square square-reverse");
+    })
+    $("#circle").on("click", function() {
+        $("#circle").toggleClass("circle circle-reverse");
+    })
+</script>
