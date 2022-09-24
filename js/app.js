@@ -15,7 +15,13 @@ function push(id) {
             break;
         case "Home":
             url = "./components/home.html"
-            break;        
+            break;
+        case "WhiteHat":
+            url = "./components/whitehat.html"
+            break;
+        case "BlackHat":
+            url = "./components/blackhat.html"     
+            break;   
         default:
             break;
     }
@@ -44,5 +50,11 @@ window.onload = event => {
     })
     $("#home").on("click", function() {
         push("Home")
+    })
+    $("#whitehat").on("click", function() {
+        push("WhiteHat")
+    })
+    $("#blackhat").on("click", function() {
+        push("BlackHat")
     })
 }
