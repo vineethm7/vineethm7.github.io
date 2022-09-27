@@ -1,6 +1,7 @@
 <main id="content">
     <center><h2>Number of Deaths in United States </h2></center>
     <center><h3>Color Schema is normalized based on Population Density</h3></center>
+    <center><a href="../resource/About.pdf" style="color: red;">About Visualization</a></center>
     <div class="container full-height">
         <section id="viz">
             <div class="row center-items margin-top">
@@ -11,13 +12,12 @@
             </div>
         </section>
     </div>
-    <section>
-    <h3>About Visualization</h3>
-    <p align = "justify" class="data-viz__text-desc"> This Visualization shows the number of deaths in each state of United States of America. More deaths per population in that State are indicated by a darker shade of blue. Now, the visualization makes it obvious how many people died in each state. It also provides information on the number of deaths among men and women. Additionally, it provides information on deaths among specific age groups.</p>
-    <p align = "justify" class="data-viz__text-desc"> Using the pandas library, the data is <a href="https://drive.google.com/file/d/1ydml3W0IYRn1Rd6QJB6e-eHa4j9J2lYY/view?usp=sharing" style="color:#FF0000">transformed</a> into JSON files. The deaths in each state were then visualized using a topojson map using D3. Because a state with a big population can have more deaths, I decided to normalize the picture based on population. Therefore, the number of fatalities may not be a reliable indicator of the severity of gun-related mortality in a given state. So I made the decision to use a metric, namely, deaths per population, to normalize the data.</p>
-    <p align = "justify" class="data-viz__text-desc"> Instead of making the image extremely difficult to understand by adding city information, I choose to simply show deaths in a state. The Blackhat Visualization suggested that the Eastern US is dangerous, but when population is taken into account, it becomes evident that not all of the Eastern states are dangerous.</p>
-
-    </section>
+    <div class="row center-items full-height">	
+        <div class="col-12 full-width center-container full-height">	
+            <div id="gridtip-container"></div>	
+            <div class="grid full-width center-container full-height"></div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
