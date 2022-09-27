@@ -106,11 +106,15 @@ function ready(data, stateCounts, cityCounts, cityVictims) {
             html += "<span class=\"tooltip_key\">";
             html += d.properties.NAME;
             html += "</span>";
+            html += "</div>";
+            html += "<div>";
             html += "<span class=\"tooltip_value\">Male: ";
             html += stateCounts[d.properties.NAME].genderMale;
+            html += " "
             html += "</span>";
             html += "<span class=\"tooltip_value\">Female: ";
             html += stateCounts[d.properties.NAME].genderFemale;
+            html += " "
             html += "</span>";
             html += "<span class=\"tooltip_value\">Deaths: ";
             html += stateCounts[d.properties.NAME].count;
@@ -120,9 +124,11 @@ function ready(data, stateCounts, cityCounts, cityVictims) {
             html += "</span>";
             html += "<span class=\"tooltip_value\">Age 18+: ";
             html += stateCounts[d.properties.NAME].ageGroup3;
+            html += " "
             html += "</span>";
             html += "<span class=\"tooltip_value\">Age 13-18: ";
             html += stateCounts[d.properties.NAME].ageGroup2;
+            html += " "
             html += "</span>";
             html += "<span class=\"tooltip_value\">Age 1-12: ";
             html += stateCounts[d.properties.NAME].ageGroup1;
@@ -283,7 +289,7 @@ function clicked(d) {
         .text(d.properties.NAME);
 
     svg.selectAll('.us-state')
-        .classed('blur', true);
+        .classed('blur', false);
 
     let stateName = d.properties.NAME;
     let cityDeaths = cityCountsData[d.properties.NAME];
@@ -345,9 +351,9 @@ function clicked(d) {
         d3.selectAll('defs')
             .remove();
 
-        active.classed("active", false);
-        active = d3.select(this).classed("active", true)
-            .classed('blur', false);
+        // active.classed("active", false);
+        // active = d3.select(this).classed("active", true)
+        //     .classed('blur', false);
 
         cityDeaths = cityDeaths.map(function(item) {
             item[1]['id'] = item[0];
@@ -430,21 +436,20 @@ function clicked(d) {
                 html += "<div class=\"tooltip_kv\">";
                 html += "<span class=\"tooltip_key\">";
                 html += d['id'];
-                html += "</span>";
-                html += "<span class=\"tooltip_value\">Deaths - ";
+                html += "</span><br>";
+                html += "<span class=\"tooltip_value\">Deaths -  ";
                 html += d['count'];
                 html += "";
                 html += "</span>";
                 html += "</div>";
                 html += '<div>';
-                html += '<span class=\"subtext\">Female Deaths - ';
-                html += d['genderFemale'];
-                html += "</span><br/>";
-                html += '<span class=\"subtext\">Male Deaths - ';
+                html += '<span class=\"subtextmale\ ">Male Deaths - ';
                 html += d['genderMale'];
                 html += "</span><br/>";
+                html += '<span class=\"subtextfemale\">Female Deaths - ';
+                html += d['genderFemale'];
+                html += "</span><br/>";
                 html += "</div>";
-
                 $("#tooltip-container").html(html);
                 $("#tooltip-container").show();
 
