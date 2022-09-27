@@ -256,22 +256,22 @@ var gradient_g = svg.append('g')
     
         grad.append('svg:stop')
             .attr('offset', '0%')
-            .attr('stop-color', '#A020F0')
+            .attr('stop-color', '#4682B4')
             .attr('stop-opacity', 1);
     
         grad.append('svg:stop')
             .attr('offset', limit0+'%')
-            .attr('stop-color', '#A020F0')
+            .attr('stop-color', '#4682B4')
             .attr('stop-opacity', 1);
     
         grad.append('svg:stop')
             .attr('offset', limit0+'%')
-            .attr('stop-color', '#FFFF00')
+            .attr('stop-color', '#FF8000')
             .attr('stop-opacity', 1);
     
         grad.append('svg:stop')
             .attr('offset', '100%')
-            .attr('stop-color', '#FFFF00')
+            .attr('stop-color', '#FF8000')
             .attr('stop-opacity', 1);
     }
 
@@ -409,9 +409,9 @@ function clicked(d) {
             .attr('fill', function (d, i) {
                 let {genderMale, genderFemale} = d;
                 if (genderMale === 0)
-                    return '#A020F0';
+                    return '#4682B4';
                 else if (genderFemale === 0)
-                    return '#FFFF00';
+                    return '#FF8000';
                 else if (genderMale === 0 && genderFemale === 0)
                     return 'black';
                 else {
@@ -431,16 +431,16 @@ function clicked(d) {
                 html += "<span class=\"tooltip_key\">";
                 html += d['id'];
                 html += "</span>";
-                html += "<span class=\"tooltip_value\">Deaths: ";
+                html += "<span class=\"tooltip_value\">Deaths - ";
                 html += d['count'];
                 html += "";
                 html += "</span>";
                 html += "</div>";
                 html += '<div>';
-                html += '<span class=\"subtext\">Deaths(Female): ';
+                html += '<span class=\"subtext\">Female Deaths - ';
                 html += d['genderFemale'];
                 html += "</span><br/>";
-                html += '<span class=\"subtext\">Deaths(Male): ';
+                html += '<span class=\"subtext\">Male Deaths - ';
                 html += d['genderMale'];
                 html += "</span><br/>";
                 html += "</div>";
