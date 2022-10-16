@@ -29,7 +29,7 @@ const createCylinder = () => {
 
 
 //ColorScale
-var colorScale = d3.scaleSequential(d3.interpolateCool);
+var colorScale = d3.scaleSequential(d3.interpolateCool).domain([0,100]);
 var grayScale = d3.scaleSequential(d3.interpolateGreys);
 
 
