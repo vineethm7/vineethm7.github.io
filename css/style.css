@@ -25,6 +25,20 @@ h1 {
     font-size: xx-large;
 }
 
+h2 {
+    color: var(--title-color);
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-size: larger;
+}
+
+h3 {
+    color: var(--title-color);
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -205,3 +219,75 @@ header {
         transform: translate(150px, 950px);
     }
 }
+
+
+.parent {
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+}
+.child {
+    display: inline-block;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+}
+
+.slider {
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+        background-color: rgb(120, 4, 4);
+        border-radius: 20px;
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        padding: 10px;
+        width: 120px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+}
+
+
+.slidecontainer {
+    width: 50%; /* Width of the outside container */
+    margin: auto;
+}
+
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+  
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: black; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+  }

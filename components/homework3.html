@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8">
+        <title>Three.js Particle System</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+        <script src="./lib/js/three.js"></script>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<section>
+        <center><h1>HW03 VDS: Three.js Warmup: Flow Assignment</h1></center>
+        <br>
+        <center><h2>About Visualization</h2></center>
+        <div>
+        <p align="justify">We are working with a computational fluid flow simulation dataset from the San Diego Supercomputing Center. You can learn more about the science behind the simulation here: <a href="http://www.uni-kl.de/sciviscontest/">http://www.uni-kl.de/sciviscontest/</a></p>
+        </div>
+        <center><h2>How to Interact?</h2></center>
+        <ul>
+                <li>To rotate the cylinder, hold the mouse trackpad and move it left, right, up, and down.</li>
+                <li>Scroll up and down over the Scene, to zoom in and out the data point cloud.</li>
+                <li>Drag the slider to move the plane along the Z-axis to see how the concentration of data points changes using XY Plane Slice Visualization.</li>
+                <li>By pressing the reset button, the configuration is returned to its initial state.</li>
+        </ul>
+</section>
+
+<body>
+        <div>
+                <div class="parent">
+                        <div class="child">
+                                <h2>Visualization of Data Points in Flow</h2>
+                                <canvas class="scene"></canvas>
+                        </div>
+                        <div class="child">
+                                <div id="planeView">
+                                        <h2>Showing XY Plane Slice</h2>
+                                        <svg id="rectView" width="400" height="400"></svg> 
+                                </div>
+                        </div>
+                        <div>
+                                <h3>Slider to Move Plane along Z Axis</h3>
+                                <span style="font-weight:bold;font-family: 'Montserrat', sans-serif;">Z = </span>
+                                <span id="zAxis" style="font-weight:bold;font-weight:bold;color:black;font-family: 'Montserrat', sans-serif;">0</span>
+                                
+                                <div class="slidecontainer">
+                                        <input type="range" min="-5" max="5" value="0" class="slider" id="slidingBar"step="0.1" oninput="sliderZPlane()">
+                                      </div>
+                                <button id="reset" class="button" onclick="resetConfiguration()">RESET</button>
+                        </div>
+                </div>
+        </div>
+        <script src="../js/orbitControls.js"></script>
+        <script src="../js/scene.js"></script>
+        <script src="../js/particleSystem.js"></script>
+</body>
+
+</html>

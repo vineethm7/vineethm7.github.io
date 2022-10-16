@@ -22,6 +22,9 @@ function push(id) {
         case "BlackHat":
             url = "./components/blackhat.html"     
             break;   
+        case "Homework3":
+            url = "./components/homework3.html"
+            break;
         default:
             break;
     }
@@ -56,5 +59,8 @@ window.onload = event => {
     })
     $("#blackhat").on("click", function() {
         push("BlackHat")
+    })
+    $("#homework3").on("click", function() {
+        push("Homework3")
     })
 }
